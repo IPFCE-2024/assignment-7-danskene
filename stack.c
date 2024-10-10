@@ -1,24 +1,37 @@
 #include "stack.h"
+#include <stdlib.h>
+
+
+
 
 void initialize(stack *s) {
-  // implement initialize here
+  s->head = NULL;
 }
 
 void push(int x, stack *s) {
-  // implement push here
+node *n = (node*) malloc(sizeof(node));
+n->data = x;
+n->next = s->head;
+s->head = n;
+
 }
 
 int pop(stack *s) {
-  // implement pop here
-  return -1;
+node *n = (node*) malloc(sizeof(node));
+n = s->head;
+s->head = s->head->next;
+int verdi = n->data;
+  return verdi;
 }
 
 bool empty(stack *s) {
-  // implement empty here
+  if(s->head == NULL){
+    return true;
+  }
   return false;
 }
 
 bool full(stack *s) {
-  // implement full here
+  // HAHAHAHAHA
   return false;
 }
